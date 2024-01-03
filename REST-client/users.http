@@ -1,0 +1,59 @@
+@baseURL = http://localhost:3100
+
+### GET alla användare
+
+GET {{baseURL}}/users
+Authorization: Bearer <token>
+
+### GET en användare
+
+GET {{baseURL}}/users/6336f36519058d63399f55d7
+Authorization: Bearer <token>
+
+### POST logga in
+
+POST {{baseURL}}/users/login
+Content-Type: application/json
+
+{
+    "email": "SS@mail.fifi",
+    "password": "pass123"
+}
+
+### POST skapa ny användare
+
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+    "firstname": "Sven",
+    "lastname": "Svensson",
+    "email": "SS@mail.fifi",
+    "password": "pass123"
+}
+
+### PATCH ändra en användare
+
+PATCH  {{baseURL}}/users/6336f36519058d63399f55d7
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "firstname": "Erik"
+}
+
+### POST skapa annan användare
+
+POST {{baseURL}}/users
+Content-Type: application/json
+
+{
+    "firstname": "Anders",
+    "lastname": "Andersson",
+    "email": "AA@mail.fifi",
+    "password": "pass123"
+}
+
+### DELETE radera en användare
+DELETE {{baseURL}}/users/6336f3c819058d63399f55df
+Authorization: Bearer <token>

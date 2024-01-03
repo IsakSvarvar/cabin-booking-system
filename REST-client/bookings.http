@@ -1,0 +1,36 @@
+@baseURL = http://localhost:3100
+
+### Visa alla bookings
+
+GET {{baseURL}}/bookings
+
+### Visa en booking
+
+GET {{baseURL}}/bookings/111123456789
+
+### Skapa ny booking
+
+POST {{baseURL}}/bookings/
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "startDate": "2022-03-01",
+    "endDate" : "2022-03-03",
+    "cabinId" : "6336f4a319058d63399f55e9"
+}
+
+### Uppdatera booking
+
+PATCH {{baseURL}}/bookings/6335e9196aba0ce70a3ef5db
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "startDate": "2022-02-21"
+}
+
+### Radera en booking
+
+DELETE {{baseURL}}/bookings/6337096ea321aa8be31cd55a
+Authorization: Bearer <token>

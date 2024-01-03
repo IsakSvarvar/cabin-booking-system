@@ -1,0 +1,45 @@
+@baseURL = http://localhost:3100
+
+### Visa alla användarens cabins
+
+GET {{baseURL}}/cabins/owned
+#Authorization: Bearer <token>
+
+### Visa en specifik cabin
+
+GET {{baseURL}}/cabins/6335e9196aba0ce70a3ef5db
+Authorization: Bearer <token>
+
+### Skapa ny cabin
+
+POST {{baseURL}}/cabins/
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "address": "Fin rd 2",
+    "size": 50,
+    "sauna" : true,
+    "beach": true,
+    "price": 500
+}
+
+### Uppdatera cabin
+
+PATCH {{baseURL}}/cabins/6335e9196aba0ce70a3ef5db
+Content-Type: application/json
+Authorization: Bearer <token>
+
+{
+    "address": "Test Street 126"
+}
+
+### Ta bort cabin
+
+DELETE {{baseURL}}/cabins/6335e9196aba0ce70a3ef5db
+Authorization: Bearer <token>
+
+### PROJ2 visa owned cabins
+
+GET {{baseURL}}/cabins/owned
+Authorization: Bearer <token>
